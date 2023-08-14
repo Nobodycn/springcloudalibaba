@@ -1,0 +1,22 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+#      routes:
+#        - id: order_router
+#          uri: lb://order-service
+#          predicates:
+#            - Path=/order/**
+#          filters:
+#            - StripPrefix=1

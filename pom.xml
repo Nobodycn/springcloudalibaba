@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>stock-nacos</module>
+        <module>order-nacos</module>
+        <module>product-nacos</module>
+        <module>config-nacos</module>
+        <module>gateway</module>
+        <module>gateway</module>
+        <module>security-nacos</module>
+        <module>oauth2-nacos</module>
+        <module>oauth2-sso-client-nacos</module>
+        <module>oauth2-recource</module>
+    </modules>
+    <!-- 公司内部自定义parent -->
+    <!--<parent></parent>-->
+    <groupId>com.tulingxueyuan.springcloudalibaba</groupId>
+    <artifactId>springcloudalibaba</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springcloudalibaba</name>
+    <description>spring cloud alibaba</description>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.alibaba.version>2.2.6.RELEASE</spring.alibaba.version>
+        <spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+        <spring.cloud.version>2021.0.1</spring.cloud.version>
+        <fast.json.version>1.2.75</fast.json.version>
+        <fast.json.version>1.2.75</fast.json.version>
+        <redis.version>1.4.7.RELEASE</redis.version>
+        <pool2.version>2.8.0</pool2.version>
+        <lombok.version>1.18.28</lombok.version>
+        <mysql.version>8.0.28</mysql.version>
+        <jdbc.version>3.1.2</jdbc.version>
+        <mybatis.version>2.2.2</mybatis.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${pool2.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fast.json.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.skywalking/apm-toolkit-trace -->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>8.5.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.skywalking/apm-toolkit-logback-1.x -->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>8.5.0</version>
+            </dependency>
+            <!-- Spring Cloud Alibaba的版本管理，通过import完成继承 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring boot的版本管理，通过import完成继承 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud Alibaba的版本管理，通过import完成继承 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- 引入Spring封装的jdbc，内部默认依赖了 HikariDataSource  数据源-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jdbc</artifactId>
+                <version>${jdbc.version}</version>
+            </dependency>
+            <!-- mysql数据库连接驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

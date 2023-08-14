@@ -1,0 +1,45 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2-CLIENT-SESSIONID${server.port}
+spring:
+  application:
+    name: oauth2Client1-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 隔离不同服务实例，用于区分开发环境、生产环境的区别
+        namespace: public
+  redis:
+    host: 192.168.101.26
+    password: 123456
+    database: 0
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.101.26:3306/oauth2?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: 123123
+      user-authorization-uri: http://localhost:9999/oauth/authorize
+      access-token-uri: http://localhost:9999/oauth/token
+    resource:
+      token-info-uri: http://localhost:9999/oauth/check_token

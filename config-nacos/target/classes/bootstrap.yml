@@ -1,0 +1,13 @@
+spring:
+  application:
+    #会根据服务名，去命名空间，拉取对应的dataid的数据
+    name: com.tulingmall.order.redis
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+#        namespace: public

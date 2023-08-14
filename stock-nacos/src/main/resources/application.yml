@@ -1,0 +1,13 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: stock-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 隔离不同服务实例，用于区分开发环境、生产环境的区别
+        namespace: public

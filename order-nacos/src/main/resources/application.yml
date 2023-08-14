@@ -1,0 +1,40 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 隔离不同服务实例，用于区分开发环境、生产环境的区别
+        namespace: public
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+      web-context-unify: true
+#Spring Boot默认的日志级别是info，feign的debug日志级别不会输出
+#直接在level下设置debug，是针对所有的包都设置debug级别
+logging:
+  level:
+    com.tulingxueyuan.order.feign: debug
+feign:
+  sentinel:
+    # openFeign整合sentinel
+    enabled: true
+  client:
+    config:
+      product-service:
+        requestInterceptors[0]:
+          com.tulingxueyuan.order.interceptor.feign.CustomFeignInterceptor
+        # 连接超时时间：请求到网络的连接时间 默认2s Unit ms
+        connecTimeOut: 5000
+        # 请求处理超时时间：连接上之后，处理的超时时间 默认5s
+        readTimeOut: 5000
+        loggerLevel: BASIC
+        #contract: feign.Contract.Default #设置为默认的契约，还原成原生注解，一般用于升级旧系统，不想变动原有代码减少产生bug的风险
+#feign日志局部配置
+#  1、配置类
+#  2、yml配置文件通过服务名称配置

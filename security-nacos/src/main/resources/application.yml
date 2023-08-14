@@ -1,0 +1,21 @@
+server:
+  port: 10023
+  servlet:
+    session:
+      timeout: 60s
+spring:
+#  security:
+#    user:
+#      name: wangc
+#      password: 123456
+#      roles: ADMIN
+  application:
+    name: security-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 隔离不同服务实例，用于区分开发环境、生产环境的区别
+        namespace: public
