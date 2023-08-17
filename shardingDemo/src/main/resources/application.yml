@@ -1,0 +1,39 @@
+server:
+  port: 9991
+spring:
+  application:
+    name: shardingDemo
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 隔离不同服务实例，用于区分开发环境、生产环境的区别
+        namespace: public
+  shardingsphere:
+    datasource:
+      names: m1
+      m1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://192.168.101.26:3306/sharding_db?serverTimezone=UTC
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: root
+    sharding:
+      tables:
+        course:
+          actual-data-nodes: m1.course_$->{1..2}
+          key-generator:
+            column: cid
+            type: SNOWFLAKE
+            props:
+              worker:
+                id: 1
+          table-strategy:
+            inline:
+              sharding-column: cid
+              algorithm-expression: course_$->{cid%2+1}
+    props:
+      sql:
+        show: true
