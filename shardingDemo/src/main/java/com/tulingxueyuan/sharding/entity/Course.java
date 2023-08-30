@@ -1,11 +1,13 @@
 package com.tulingxueyuan.sharding.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 
 /**
  * 课程
  */
 public class Course {
+    @TableId
     private Long cid;
     private String cname;
     @TableField("user_id")
