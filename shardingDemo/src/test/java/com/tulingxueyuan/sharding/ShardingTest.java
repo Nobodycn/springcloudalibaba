@@ -89,8 +89,9 @@ public class ShardingTest {
     public void queryCourdeComplex() {
         QueryWrapper<Course> wrapper = new QueryWrapper<Course>();
         wrapper.orderByDesc("user_id");
-        wrapper.in("cid", 550364727269109760L, 550364727684345856L, 550364727734677504L, 550364727780814848L, 550364727831146496L);
-        wrapper.between("user_id", 3L, 8L);
+        wrapper.in("cid", 1697296653531271169L, 1697296654378520578L);
+        // 多个字段查询。standard不足以支持，需要使用到complex分片算法
+        wrapper.between("user_id", 3L, 1008L);
 //        wrapper.and(courseQueryWrapper -> courseQueryWrapper.between("user_id","3","8"));
         List<Course> course = courseMapper.selectList(wrapper);
         System.out.println(course);

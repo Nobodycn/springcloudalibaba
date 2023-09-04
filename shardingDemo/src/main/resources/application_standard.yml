@@ -37,13 +37,15 @@ spring:
               worker:
                 id: 1
           table-strategy:
-            complex:
-              sharding-columns: cid, user_id
-              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.complex.MyComplexKeysShardingAlgorithm
+            standard:
+              sharding-column: cid
+              precise-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyPreciseTableShardingAlgorithm
+              range-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyRangeTableShardingAlgorithm
           database-strategy:
-            complex:
-              sharding-columns: cid, user_id
-              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.complex.MyComplexShardingAlgorithmDB
+            standard:
+              sharding-column: cid
+              precise-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyPreciseDSShardingAlgorithm
+              range-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyRangeDSShardingAlgorithm
     props:
       sql:
         show: true
