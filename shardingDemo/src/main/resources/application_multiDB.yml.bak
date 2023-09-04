@@ -37,15 +37,13 @@ spring:
               worker:
                 id: 1
           table-strategy:
-            standard:
+            inline:
               sharding-column: cid
-              precise-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyPreciseTableShardingAlgorithm
-              range-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyRangeTableShardingAlgorithm
+              algorithm-expression: course_$->{(cid%4 + 1).intdiv(2)}
           database-strategy:
-            standard:
+            inline:
               sharding-column: cid
-              precise-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyPreciseDSShardingAlgorithm
-              range-algorithm-class-name: com.tulingxueyuan.sharding.algorithm.MyRangeDSShardingAlgorithm
+              algorithm-expression: m$->{cid%2+1}
     props:
       sql:
         show: true
