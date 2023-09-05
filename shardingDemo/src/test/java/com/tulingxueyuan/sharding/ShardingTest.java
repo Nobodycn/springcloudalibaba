@@ -60,6 +60,13 @@ public class ShardingTest {
     @Test
     public void queryCourse() {
         QueryWrapper<Course> wrapper = new QueryWrapper<Course>();
+        //强制只查course_1表
+        HintManager hintManager = HintManager.getInstance();
+        //注意这两个属性，dataSourceBaseShardingValue用于强制分库
+        // 强制查m1数据源
+        hintManager.addDatabaseShardingValue("course","1");
+        // 强制查course_1表
+        hintManager.addTableShardingValue("course","1");
         wrapper.eq("cid", 1697296653531271169L);
         List<Course> courses = courseMapper.selectList(wrapper);
         courses.forEach(System.out::println);

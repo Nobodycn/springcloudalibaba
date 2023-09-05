@@ -37,11 +37,13 @@ spring:
               worker:
                 id: 1
           table-strategy:
-            hint:
-              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.hint.MyHintTableShardingAlgorithm
+            complex:
+              sharding-columns: cid, user_id
+              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.complex.MyComplexKeysShardingAlgorithm
           database-strategy:
-            hint:
-              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.hint.MyHintDSShardingAlgorithm
+            complex:
+              sharding-columns: cid, user_id
+              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.complex.MyComplexShardingAlgorithmDB
     props:
       sql:
         show: true
