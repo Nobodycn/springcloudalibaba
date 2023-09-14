@@ -36,10 +36,10 @@ public class ShardingTest {
 
     @Test
     public void addCourse() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Course course = new Course();
             course.setCname("Java");
-            course.setUserId(Long.valueOf("" + (100 + i)));
+            course.setUserId(Long.valueOf("" + (100)));
             course.setCstatus("1");
             courseMapper.insert(course);
         }

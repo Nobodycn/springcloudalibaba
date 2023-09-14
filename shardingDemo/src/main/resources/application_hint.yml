@@ -37,15 +37,11 @@ spring:
               worker:
                 id: 1
           table-strategy:
-            inline:
-              sharding-column: cid
-              algorithm-expression: course_$->{((cid+1)%4).intdiv(2)}
+            hint:
+              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.hint.MyHintTableShardingAlgorithm
           database-strategy:
-            inline:
-              sharding-column: cid
-              algorithm-expression: m$->{cid%2+1}
+            hint:
+              algorithm-class-name: com.tulingxueyuan.sharding.algorithm.hint.MyHintDSShardingAlgorithm
     props:
       sql:
         show: true
-  main:
-    allow-bean-definition-overriding: true
