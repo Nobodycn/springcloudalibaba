@@ -11,6 +11,7 @@
         <module name="security-nacos" />
         <module name="order-nacos" />
         <module name="stock-nacos" />
+        <module name="netty-nacos" />
         <module name="config-nacos" />
         <module name="oauth2-nacos" />
         <module name="product-nacos" />
@@ -22,6 +23,7 @@
     <bytecodeTargetLevel>
       <module name="config-nacos" target="8" />
       <module name="gateway" target="8" />
+      <module name="netty-nacos" target="8" />
       <module name="oauth2-nacos" target="8" />
       <module name="oauth2-recource" target="8" />
       <module name="oauth2-sso-client-nacos" target="8" />

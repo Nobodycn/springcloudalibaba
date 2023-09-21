@@ -14,6 +14,7 @@
         <module>oauth2-sso-client-nacos</module>
         <module>oauth2-recource</module>
         <module>shardingDemo</module>
+        <module>netty-nacos</module>
     </modules>
     <!-- 公司内部自定义parent -->
     <!--<parent></parent>-->
