@@ -1,4 +1,4 @@
-package com.tulingxueyuan.stock;
+package com.tulingxueyuan.netty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,9 +13,9 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class StockApplication {
+public class NettyApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StockApplication.class, args);
+        SpringApplication.run(NettyApplication.class, args);
     }
 
     @Bean
