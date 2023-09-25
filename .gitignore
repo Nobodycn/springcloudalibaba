@@ -1,2 +1,17 @@
 /shardingDemo/target/
 /.idea/libraries/
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoClientMC$1.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoClientMC.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoClientMCHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoClientOR$1.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoClientOR.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoClientORHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoServerMC$1.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoServerMC.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/EchoServerMCHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoServerOR$1.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoServerOR.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/EchoServerORHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/sharehndler/MessageCountHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/NettyConst.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/outread/ServerOutReadHandler.class
