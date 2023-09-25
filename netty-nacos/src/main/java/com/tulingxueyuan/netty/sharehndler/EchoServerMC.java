@@ -1,6 +1,6 @@
 package com.tulingxueyuan.netty.sharehndler;
 
-import cn.tuling.nettybasic.NettyConst;
+import com.tulingxueyuan.netty.NettyConst;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
