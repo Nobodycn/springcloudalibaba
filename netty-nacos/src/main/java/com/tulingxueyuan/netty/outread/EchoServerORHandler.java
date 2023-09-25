@@ -16,7 +16,7 @@ public class EchoServerORHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf in = (ByteBuf)msg;
+        ByteBuf in = (ByteBuf) msg;
         LOG.info("server accept :" + in.toString(CharsetUtil.UTF_8));
         ctx.writeAndFlush(in);
         //ctx.close();

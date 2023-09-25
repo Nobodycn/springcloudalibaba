@@ -22,13 +22,13 @@ public class MessageCountHandler extends ChannelDuplexHandler {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        LOG.info("收到报文总数："+inCount.incrementAndGet());
+        LOG.info("收到报文总数：" + inCount.incrementAndGet());
         super.channelRead(ctx, msg);
     }
 
     @Override
     public void flush(ChannelHandlerContext ctx) throws Exception {
-        LOG.info("发出报文总数："+outCount.incrementAndGet());
+        LOG.info("发出报文总数：" + outCount.incrementAndGet());
         super.flush(ctx);
     }
 }

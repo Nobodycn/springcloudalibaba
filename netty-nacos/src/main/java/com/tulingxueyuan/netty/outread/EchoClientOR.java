@@ -27,14 +27,14 @@ public class EchoClientOR {
     public void start() throws InterruptedException {
 
         /*线程组*/
-        EventLoopGroup group  = new NioEventLoopGroup();
+        EventLoopGroup group = new NioEventLoopGroup();
         try {
             /*客户端启动必备，和服务器的不同点*/
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)/*指定使用NIO的通信模式*/
                     /*指定服务器的IP地址和端口，和服务器的不同点*/
-                    .remoteAddress(new InetSocketAddress(host,port))
+                    .remoteAddress(new InetSocketAddress(host, port))
                     /*和服务器的不同点*/
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
@@ -52,6 +52,6 @@ public class EchoClientOR {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new EchoClientOR(9999,"127.0.0.1").start();
+        new EchoClientOR(9999, "127.0.0.1").start();
     }
 }

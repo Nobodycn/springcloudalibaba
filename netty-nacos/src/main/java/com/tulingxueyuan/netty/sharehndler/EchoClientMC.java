@@ -28,13 +28,13 @@ public class EchoClientMC {
     public void start() throws InterruptedException {
 
         /*线程组*/
-        EventLoopGroup group  = new NioEventLoopGroup();
+        EventLoopGroup group = new NioEventLoopGroup();
         try {
             /*客户端启动必备*/
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)/*指定使用NIO的通信模式*/
-                    .remoteAddress(new InetSocketAddress(host,port))/*指定服务器的IP地址和端口*/
+                    .remoteAddress(new InetSocketAddress(host, port))/*指定服务器的IP地址和端口*/
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
@@ -51,6 +51,6 @@ public class EchoClientMC {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new EchoClientMC(NettyConst.ECHO_PORT,"127.0.0.1").start();
+        new EchoClientMC(NettyConst.ECHO_PORT, "127.0.0.1").start();
     }
 }

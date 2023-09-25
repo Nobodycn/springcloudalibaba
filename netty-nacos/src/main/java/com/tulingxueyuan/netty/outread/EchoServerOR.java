@@ -36,7 +36,7 @@ public class EchoServerOR {
 
     public void start() throws InterruptedException {
         /*线程组*/
-        EventLoopGroup group  = new NioEventLoopGroup();
+        EventLoopGroup group = new NioEventLoopGroup();
         try {
             /*服务端启动必备*/
             ServerBootstrap b = new ServerBootstrap();
