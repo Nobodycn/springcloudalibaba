@@ -28,7 +28,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.42.Final</version>
+            <version>4.1.75.Final</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -50,6 +50,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
