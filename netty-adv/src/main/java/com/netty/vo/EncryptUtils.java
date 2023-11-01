@@ -8,13 +8,12 @@ import java.security.NoSuchAlgorithmException;
 
 
 /**
- * @author Mark老师
- *类说明：摘要的工具类
+ * @author 类说明：摘要的工具类
  */
 public class EncryptUtils {
 
     /**
-     * @param strSrc 需要被摘要的字符串
+     * @param strSrc  需要被摘要的字符串
      * @param encName 摘要方式，有 MD5、SHA-1和SHA-256 这三种，缺省为MD5
      * @return 返回摘要字符串
      */
@@ -39,6 +38,7 @@ public class EncryptUtils {
 
     /**
      * MD5摘要
+     *
      * @param str 需要被摘要的字符串
      * @return 对字符串str进行MD5摘要后，将摘要字符串返回
      */
@@ -48,6 +48,7 @@ public class EncryptUtils {
 
     /**
      * SHA1摘要
+     *
      * @param str 需要被摘要的字符串
      * @return 对字符串str进行SHA-1摘要后，将摘要字符串返回
      */
@@ -57,6 +58,7 @@ public class EncryptUtils {
 
     /**
      * SHA256摘要
+     *
      * @param str 需要被摘要的字符串
      * @return 对字符串str进行SHA-256摘要后，将摘要字符串返回
      */
@@ -85,10 +87,10 @@ public class EncryptUtils {
      * 先将str进行一次MD5摘要，摘要后再取摘要后的字符串的第1、3、5个字符追加到摘要串，
      * 再拿这个摘要串再次进行摘要
      */
-    public static String encrypt(String str)   {
+    public static String encrypt(String str) {
         String encryptStr = EncryptByMD5(str);
-        if(encryptStr!=null ){
-            encryptStr = encryptStr + encryptStr.charAt(0)+encryptStr.charAt(2)+encryptStr.charAt(4);
+        if (encryptStr != null) {
+            encryptStr = encryptStr + encryptStr.charAt(0) + encryptStr.charAt(2) + encryptStr.charAt(4);
             encryptStr = EncryptByMD5(encryptStr);
         }
         return encryptStr;
@@ -98,7 +100,7 @@ public class EncryptUtils {
      * 对对象进行MD5摘要，先对对象进行序列化，转为byte数组，
      * 再将byte数组转为字符串，然后进行MD5加盐摘要
      */
-    public static String encryptObj(Object o){
+    public static String encryptObj(Object o) {
         return encrypt(bytes2Hex(KryoSerializer.obj2Bytes(o)));
     }
 }

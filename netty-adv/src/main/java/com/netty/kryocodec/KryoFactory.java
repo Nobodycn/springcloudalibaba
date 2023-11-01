@@ -14,8 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 /**
- * @author
- * 类说明：Kryo的工厂,拿到Kryo的实例
+ * @author 类说明：Kryo的工厂,拿到Kryo的实例
  */
 public class KryoFactory {
 

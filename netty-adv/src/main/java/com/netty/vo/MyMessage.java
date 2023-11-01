@@ -1,8 +1,7 @@
 package com.netty.vo;
 
 /**
- * @author Mark老师
- * 类说明：消息实体类
+ * @author 类说明：消息实体类
  */
 public final class MyMessage {
 
@@ -11,23 +10,23 @@ public final class MyMessage {
     private Object body;
 
     public final MsgHeader getMyHeader() {
-    	return msgHeader;
+        return msgHeader;
     }
 
     public final void setMyHeader(MsgHeader msgHeader) {
-    	this.msgHeader = msgHeader;
+        this.msgHeader = msgHeader;
     }
 
     public final Object getBody() {
-    	return body;
+        return body;
     }
 
     public final void setBody(Object body) {
-    	this.body = body;
+        this.body = body;
     }
 
     @Override
     public String toString() {
-    	return "MyMessage [myHeader=" + msgHeader + "][body="+body+"]";
+        return "MyMessage [myHeader=" + msgHeader + "][body=" + body + "]";
     }
 }

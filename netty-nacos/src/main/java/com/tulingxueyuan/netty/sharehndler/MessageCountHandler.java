@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @author ：Mark老师
+ * @author ：
  * @description ：统计服务器接受到和发出的业务报文总数
  */
 @ChannelHandler.Sharable

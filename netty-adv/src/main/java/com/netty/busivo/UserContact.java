@@ -2,8 +2,7 @@ package com.netty.busivo;
 
 
 /**
- * @author
- * 类说明：实体类
+ * @author 类说明：实体类
  */
 public class UserContact {
     private String mail;

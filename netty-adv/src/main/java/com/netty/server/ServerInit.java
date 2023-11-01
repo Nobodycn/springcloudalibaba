@@ -10,7 +10,7 @@ import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class ServerInit extends ChannelInitializer<SocketChannel> {
@@ -20,7 +20,7 @@ public class ServerInit extends ChannelInitializer<SocketChannel> {
         //ch.pipeline().addLast(new MetricsHandler());
         /*粘包半包问题*/
         ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(65535,
-                0,2,0,
+                0, 2, 0,
                 2));
         ch.pipeline().addLast(new LengthFieldPrepender(2));
 

@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author ：Mark老师
+ * @author ：
  * @description ：TODO
  */
 public class ServerOutReadHandler extends ChannelOutboundHandlerAdapter {

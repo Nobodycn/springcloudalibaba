@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * @author Mark老师
+ * @author
  * 类说明：Kryo的序列化器，负责序列化和反序列化
  */
 public class KryoSerializer {

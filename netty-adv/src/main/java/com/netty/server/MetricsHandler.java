@@ -4,7 +4,9 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
-import io.netty.util.concurrent.*;
+import io.netty.util.concurrent.EventExecutor;
+import io.netty.util.concurrent.ImmediateEventExecutor;
+import io.netty.util.concurrent.SingleThreadEventExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @author ：Mark老师
+ * @author ：
  * @description ：性能统计
  */
 public class MetricsHandler extends ChannelDuplexHandler {
@@ -34,7 +36,7 @@ public class MetricsHandler extends ChannelDuplexHandler {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         chCount.incrementAndGet();
-        if(startTask.compareAndSet(false,true)){
+        if (startTask.compareAndSet(false, true)) {
             statService.scheduleAtFixedRate(new Runnable() {
                 @Override
                 public void run() {
@@ -55,18 +57,18 @@ public class MetricsHandler extends ChannelDuplexHandler {
                     }
                     /*发送队列积压字节数*/
                     Iterator<Channel> channels = channelGroup.iterator();
-                    while(channels.hasNext()){
+                    while (channels.hasNext()) {
                         Channel channel = channels.next();
-                        if(channel instanceof ServerChannel) continue;
-                        LOG.info(channel+"发送缓存积压字节数："+channel.unsafe().outboundBuffer().totalPendingWriteBytes());
+                        if (channel instanceof ServerChannel) continue;
+                        LOG.info(channel + "发送缓存积压字节数：" + channel.unsafe().outboundBuffer().totalPendingWriteBytes());
                     }
 
-                    LOG.info( "读取速率(字节/分)："+totalReadBytes.getAndSet(0));
-                    LOG.info( "写出速率(字节/分)："+totalWriteBytes.getAndSet(0));
+                    LOG.info("读取速率(字节/分)：" + totalReadBytes.getAndSet(0));
+                    LOG.info("写出速率(字节/分)：" + totalWriteBytes.getAndSet(0));
 
                     LOG.info("----------------性能指标采集结束-------------------");
                 }
-            },0,60*1000, TimeUnit.MILLISECONDS);
+            }, 0, 60 * 1000, TimeUnit.MILLISECONDS);
         }
         channelGroup.add(ctx.channel());
         super.channelActive(ctx);
@@ -74,15 +76,15 @@ public class MetricsHandler extends ChannelDuplexHandler {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        int readableBytes = ((ByteBuf)msg).readableBytes();
-        totalReadBytes.getAndAdd(readableBytes) ;
-        ctx.fireChannelRead(msg) ;
+        int readableBytes = ((ByteBuf) msg).readableBytes();
+        totalReadBytes.getAndAdd(readableBytes);
+        ctx.fireChannelRead(msg);
     }
 
     @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-        int writeableBytes = ((ByteBuf)msg).readableBytes();
-        totalWriteBytes.getAndAdd(writeableBytes) ;
+        int writeableBytes = ((ByteBuf) msg).readableBytes();
+        totalWriteBytes.getAndAdd(writeableBytes);
         super.write(ctx, msg, promise);
     }
 

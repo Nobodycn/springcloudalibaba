@@ -12,8 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Mark老师
- * 类说明：业务处理类
+ * @author 类说明：业务处理类
  */
 public class ServerBusiHandler
         extends SimpleChannelInboundHandler<MyMessage> {

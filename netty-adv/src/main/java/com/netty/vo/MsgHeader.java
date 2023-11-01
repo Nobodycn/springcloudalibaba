@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Mark老师
- * 类说明：消息头
+ * @author 类说明：消息头
  */
 public final class MsgHeader {
 
@@ -33,35 +32,35 @@ public final class MsgHeader {
     }
 
     public final long getMsgID() {
-    	return msgID;
+        return msgID;
     }
 
     public final void setMsgID(long msgID) {
-    	this.msgID = msgID;
+        this.msgID = msgID;
     }
 
     public final byte getType() {
-    	return type;
+        return type;
     }
 
     public final void setType(byte type) {
-    	this.type = type;
+        this.type = type;
     }
 
     public final byte getPriority() {
-    	return priority;
+        return priority;
     }
 
     public final void setPriority(byte priority) {
-    	this.priority = priority;
+        this.priority = priority;
     }
 
     public final Map<String, Object> getAttachment() {
-    	return attachment;
+        return attachment;
     }
 
     public final void setAttachment(Map<String, Object> attachment) {
-	    this.attachment = attachment;
+        this.attachment = attachment;
     }
 
     @Override

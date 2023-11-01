@@ -7,8 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author
- * 类说明：接收业务应答消息并处理
+ * @author 类说明：接收业务应答消息并处理
  */
 public class ClientBusiHandler extends SimpleChannelInboundHandler<MyMessage> {
 
@@ -16,6 +15,6 @@ public class ClientBusiHandler extends SimpleChannelInboundHandler<MyMessage> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MyMessage msg) throws Exception {
-        LOG.info("业务应答消息："+msg.toString());
+        LOG.info("业务应答消息：" + msg.toString());
     }
 }

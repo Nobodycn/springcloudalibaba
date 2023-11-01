@@ -7,15 +7,14 @@ import com.netty.busivo.UserContact;
 import java.util.Scanner;
 
 /**
- * @author
- * 类说明：业务方如何调用Netty客户端演示
+ * @author 类说明：业务方如何调用Netty客户端演示
  */
 public class BusiClient {
     public static void main(String[] args) throws Exception {
         NettyClient nettyClient = new NettyClient();
         new Thread(nettyClient).start();
-        while(!nettyClient.isConnected()){
-            synchronized (nettyClient){
+        while (!nettyClient.isConnected()) {
+            synchronized (nettyClient) {
                 nettyClient.wait();
             }
         }
@@ -25,38 +24,37 @@ public class BusiClient {
             String msg = scanner.next();
             if (msg == null) {
                 break;
-            } else if ("q".equals(msg.toLowerCase())) {
+            } else if ("q".equalsIgnoreCase(msg)) {
                 nettyClient.close();
                 scanner.close();
-                while(nettyClient.isConnected()){
-                    synchronized (nettyClient){
+                while (nettyClient.isConnected()) {
+                    synchronized (nettyClient) {
                         System.out.println("等待网络关闭完成....");
                         nettyClient.wait();
                     }
                 }
                 System.exit(1);
-            } else if("v".equals(msg.toLowerCase())){
+            } else if ("v".equalsIgnoreCase(msg)) {
                 User user = new User();
                 user.setAge(19);
                 String userName = "mark";
                 user.setUserName(userName);
                 user.setId("No:1");
                 user.setUserContact(
-                        new UserContact(userName+"@tuling.com",
+                        new UserContact(userName + "@tuling.com",
                                 "133"));
                 nettyClient.send(user);
-            }else if("o".equals(msg.toLowerCase())){
+            } else if ("o".equalsIgnoreCase(msg)) {
                 User user = new User();
                 user.setAge(23);
                 String userName = "oneway";
                 user.setUserName(userName);
                 user.setId("No:1");
                 user.setUserContact(
-                        new UserContact(userName+"@tuling.com",
+                        new UserContact(userName + "@tuling.com",
                                 "331"));
                 nettyClient.sendOneWay(user);
-            }
-            else {
+            } else {
                 nettyClient.send(msg);
             }
         }

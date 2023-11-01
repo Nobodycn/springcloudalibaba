@@ -1,7 +1,7 @@
 package com.tulingxueyuan.netty;
 
 /**
- * @author ：Mark老师
+ * @author ：
  * @description ：存放常量
  */
 public class NettyConst {

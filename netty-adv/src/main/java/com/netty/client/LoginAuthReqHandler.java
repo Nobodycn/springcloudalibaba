@@ -10,8 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author
- * 类说明：发起登录请求
+ * @author 类说明：发起登录请求
  */
 public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
 
@@ -30,8 +29,8 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
             throws Exception {
         MyMessage message = (MyMessage) msg;
         /*是不是握手成功的应答*/
-        if(message.getMyHeader()!=null
-                &&message.getMyHeader().getType()== MessageType.LOGIN_RESP.value()){
+        if (message.getMyHeader() != null
+                && message.getMyHeader().getType() == MessageType.LOGIN_RESP.value()) {
             LOG.info("收到认证应答报文，服务器是否验证通过？");
             byte loginResult = (byte) message.getBody();
             if (loginResult != (byte) 0) {
@@ -43,7 +42,7 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
                 ctx.pipeline().remove(this);
                 ReferenceCountUtil.release(msg);
             }
-        }else{
+        } else {
             ctx.fireChannelRead(msg);
         }
     }
