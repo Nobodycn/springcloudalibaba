@@ -15,6 +15,7 @@
         <module>oauth2-recource</module>
         <module>shardingDemo</module>
         <module>netty-nacos</module>
+        <module>netty-adv</module>
     </modules>
     <!-- 公司内部自定义parent -->
     <!--<parent></parent>-->
