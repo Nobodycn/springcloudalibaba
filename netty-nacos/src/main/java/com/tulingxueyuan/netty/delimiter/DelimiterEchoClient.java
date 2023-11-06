@@ -26,7 +26,8 @@ public class DelimiterEchoClient {
     }
 
     public void start() throws InterruptedException {
-        EventLoopGroup group = new NioEventLoopGroup();/*线程组*/
+        EventLoopGroup group = new NioEventLoopGroup();
+        /*线程组*/
         try {
             final Bootstrap b = new Bootstrap();;/*客户端启动必须*/
             b.group(group)/*将线程组传入*/
