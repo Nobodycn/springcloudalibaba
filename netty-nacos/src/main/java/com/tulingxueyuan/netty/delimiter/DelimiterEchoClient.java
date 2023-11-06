@@ -33,8 +33,10 @@ public class DelimiterEchoClient {
             /*客户端启动必须*/
             b.group(group)
                     /*将线程组传入*/
-                    .channel(NioSocketChannel.class)/*指定使用NIO进行网络传输*/
-                    .remoteAddress(new InetSocketAddress(host,DelimiterEchoServer.PORT))/*配置要连接服务器的ip地址和端口*/
+                    .channel(NioSocketChannel.class)
+                    /*指定使用NIO进行网络传输*/
+                    .remoteAddress(new InetSocketAddress(host,DelimiterEchoServer.PORT))
+                    /*配置要连接服务器的ip地址和端口*/
                     .handler(new ChannelInitializerImp());
             ChannelFuture f = b.connect().sync();
             System.out.println("已连接到服务器.....");
