@@ -1,5 +1,6 @@
 package embedded;
 
+import com.tulingxueyuan.netty.embedded.AbsIntegerEncoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.embedded.EmbeddedChannel;
