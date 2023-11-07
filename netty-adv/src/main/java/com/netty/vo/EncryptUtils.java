@@ -28,7 +28,8 @@ public class EncryptUtils {
             }
             md = MessageDigest.getInstance(encName);
             md.update(bt);
-            strDes = bytes2Hex(md.digest()); // to HexString
+            strDes = bytes2Hex(md.digest());
+            // to HexString
         } catch (NoSuchAlgorithmException e) {
             System.out.println("Invalid algorithm.");
             return null;
