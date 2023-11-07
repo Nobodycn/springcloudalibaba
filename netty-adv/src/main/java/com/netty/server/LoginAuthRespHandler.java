@@ -12,8 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.net.InetSocketAddress;
 
 /**
- * @author 
- * 类说明：登录检查，这个处理器在客户认证通过后，其实可以移除
+ * @author 类说明：登录检查，这个处理器在客户认证通过后，其实可以移除
  */
 public class LoginAuthRespHandler extends ChannelInboundHandlerAdapter {
 
