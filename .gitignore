@@ -16,3 +16,4 @@
 /netty-nacos/target/classes/com/tulingxueyuan/netty/NettyConst.class
 /netty-nacos/target/classes/com/tulingxueyuan/netty/outread/ServerOutReadHandler.class
 /netty-adv/target/
+/netty-nacos/target/classes/com/tulingxueyuan/netty/embedded/AbsIntegerEncoder.class
