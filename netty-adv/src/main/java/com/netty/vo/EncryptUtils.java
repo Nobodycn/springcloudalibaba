@@ -18,8 +18,8 @@ public class EncryptUtils {
      * @return 返回摘要字符串
      */
     private static String EncryptStr(String strSrc, String encName) {
-        MessageDigest md = null;
-        String strDes = null;
+        MessageDigest md;
+        String strDes;
 
         byte[] bt = strSrc.getBytes();
         try {
