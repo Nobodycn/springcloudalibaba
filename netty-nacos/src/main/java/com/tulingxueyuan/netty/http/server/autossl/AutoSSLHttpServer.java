@@ -14,8 +14,10 @@ import io.netty.handler.ssl.util.SelfSignedCertificate;
  * 类说明：
  */
 public class AutoSSLHttpServer {
-    public static final int port = 6790; //设置服务端端口
-    private static EventLoopGroup group = new NioEventLoopGroup();   // 通过nio方式来接收连接和处理连接
+    //设置服务端端口
+    public static final int port = 6790;
+    // 通过nio方式来接收连接和处理连接
+    private static EventLoopGroup group = new NioEventLoopGroup();
     private static ServerBootstrap b = new ServerBootstrap();
 
     /**
@@ -29,14 +31,16 @@ public class AutoSSLHttpServer {
         try {
             b.group(group);
             b.channel(NioServerSocketChannel.class);
-            b.childHandler(new AutoSSLServerHandlerInit(sslCtx)); //设置过滤器
+            //设置过滤器
+            b.childHandler(new AutoSSLServerHandlerInit(sslCtx));
             // 服务器绑定端口监听
             ChannelFuture f = b.bind(port).sync();
             System.out.println("服务端启动成功,端口是:"+port);
             // 监听服务器关闭监听
             f.channel().closeFuture().sync();
         } finally {
-            group.shutdownGracefully(); //关闭EventLoopGroup，释放掉所有资源包括创建的线程
+            //关闭EventLoopGroup，释放掉所有资源包括创建的线程
+            group.shutdownGracefully();
         }
     }
 }

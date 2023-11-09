@@ -60,7 +60,6 @@ public class BusiHandler extends ChannelInboundHandlerAdapter {
             //如果是其他类型请求，如post
             if(HttpMethod.POST.equals(method)){
                 //接受到的消息，做业务逻辑处理...
-                //....
                 return;
             }
 
