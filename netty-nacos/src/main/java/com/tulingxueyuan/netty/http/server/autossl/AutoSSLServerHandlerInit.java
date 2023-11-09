@@ -12,7 +12,7 @@ import io.netty.handler.ssl.OptionalSslHandler;
 import io.netty.handler.ssl.SslContext;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class AutoSSLServerHandlerInit extends ChannelInitializer<SocketChannel> {
