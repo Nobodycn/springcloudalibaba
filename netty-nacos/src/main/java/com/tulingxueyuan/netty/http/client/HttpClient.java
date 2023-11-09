@@ -13,7 +13,7 @@ import io.netty.handler.codec.http.HttpContentDecompressor;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 
 /**
- * @author Mark老师
+ * @author
  * 类说明：
  */
 public class HttpClient {

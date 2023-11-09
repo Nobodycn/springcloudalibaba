@@ -10,7 +10,7 @@ import io.netty.util.CharsetUtil;
 import java.net.URI;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class HttpClientInboundHandler extends ChannelInboundHandlerAdapter {

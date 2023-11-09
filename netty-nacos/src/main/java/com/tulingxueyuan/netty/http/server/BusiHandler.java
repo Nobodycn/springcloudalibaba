@@ -8,7 +8,7 @@ import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class BusiHandler extends ChannelInboundHandlerAdapter {
