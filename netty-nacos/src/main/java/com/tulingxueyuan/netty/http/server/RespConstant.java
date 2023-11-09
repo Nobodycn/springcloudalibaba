@@ -3,7 +3,7 @@ package com.tulingxueyuan.netty.http.server;
 import java.util.Random;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class RespConstant {

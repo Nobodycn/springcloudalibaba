@@ -10,7 +10,7 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.ssl.SslContext;
 
 /**
- * @author Mark老师
+ * @author 
  * 类说明：
  */
 public class ServerHandlerInit extends ChannelInitializer<SocketChannel> {
