@@ -28,10 +28,10 @@ public class HttpClient {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(new HttpClientCodec());
-                    /*聚合http为一个完整的报文*/
+                    // 聚合http为一个完整的报文
                     ch.pipeline().addLast("aggregator",
                             new HttpObjectAggregator(10*1024*1024));
-                    /*解压缩*/
+                    // 解压缩
                     ch.pipeline().addLast("decompressor",
                             new HttpContentDecompressor());
                     ch.pipeline().addLast(new HttpClientInboundHandler());
