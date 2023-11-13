@@ -32,8 +32,7 @@ public class HttpClient {
                     ch.pipeline().addLast("aggregator",
                             new HttpObjectAggregator(10*1024*1024));
                     // 解压缩
-                    ch.pipeline().addLast("decompressor",
-                            new HttpContentDecompressor());
+                    ch.pipeline().addLast("decompressor", new HttpContentDecompressor());
                     ch.pipeline().addLast(new HttpClientInboundHandler());
                 }
             });
