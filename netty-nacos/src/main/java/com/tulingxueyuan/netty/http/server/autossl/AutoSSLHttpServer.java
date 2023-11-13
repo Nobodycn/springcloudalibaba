@@ -10,8 +10,7 @@ import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
 
 /**
- * @author 
- * 类说明：
+ * @author 类说明：
  */
 public class AutoSSLHttpServer {
     //设置服务端端口
@@ -35,7 +34,7 @@ public class AutoSSLHttpServer {
             b.childHandler(new AutoSSLServerHandlerInit(sslCtx));
             // 服务器绑定端口监听
             ChannelFuture f = b.bind(port).sync();
-            System.out.println("服务端启动成功,端口是:"+port);
+            System.out.println("服务端启动成功,端口是:" + port);
             // 监听服务器关闭监听
             f.channel().closeFuture().sync();
         } finally {

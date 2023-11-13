@@ -10,13 +10,13 @@ import io.netty.util.CharsetUtil;
 import java.net.URI;
 
 /**
- * @author 
- * 类说明：
+ * @author 类说明：
  */
 public class HttpClientInboundHandler extends ChannelInboundHandlerAdapter {
 
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        FullHttpResponse httpResponse = (FullHttpResponse)msg;
+        FullHttpResponse httpResponse = (FullHttpResponse) msg;
         System.out.println(httpResponse.status());
         System.out.println(httpResponse.headers());
         ByteBuf buf = httpResponse.content();
@@ -36,10 +36,8 @@ public class HttpClientInboundHandler extends ChannelInboundHandlerAdapter {
 
         // 构建http请求
         request.headers().set(HttpHeaderNames.HOST, HttpClient.HOST);
-        request.headers().set(HttpHeaderNames.CONNECTION,
-                HttpHeaderValues.KEEP_ALIVE);
-        request.headers().set(HttpHeaderNames.CONTENT_LENGTH,
-                request.content().readableBytes());
+        request.headers().set(HttpHeaderNames.CONNECTION, HttpHeaderValues.KEEP_ALIVE);
+        request.headers().set(HttpHeaderNames.CONTENT_LENGTH, request.content().readableBytes());
         // 发送http请求
         ctx.writeAndFlush(request);
     }

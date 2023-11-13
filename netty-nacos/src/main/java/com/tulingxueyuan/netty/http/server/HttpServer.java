@@ -10,8 +10,7 @@ import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
 
 /**
- * @author 
- * 类说明：
+ * @author 类说明：
  */
 public class HttpServer {
     //设置服务端端口
@@ -28,12 +27,12 @@ public class HttpServer {
      **/
     public static void main(String[] args) throws Exception {
         final SslContext sslCtx;
-        if(SSL){
+        if (SSL) {
             SelfSignedCertificate ssc = new SelfSignedCertificate();
             sslCtx = SslContextBuilder.forServer(ssc.certificate(),
                     ssc.privateKey()).build();
 
-        }else{
+        } else {
             sslCtx = null;
         }
         try {
@@ -42,8 +41,8 @@ public class HttpServer {
             b.childHandler(new ServerHandlerInit(sslCtx)); //设置过滤器
             // 服务器绑定端口监听
             ChannelFuture f = b.bind(port).sync();
-            System.out.println("服务端启动成功,端口是:"+port);
-            System.out.println("服务器启动模式： "+( SSL ? "SSL安全模式" :"普通模式"));
+            System.out.println("服务端启动成功,端口是:" + port);
+            System.out.println("服务器启动模式： " + (SSL ? "SSL安全模式" : "普通模式"));
             // 监听服务器关闭监听
             f.channel().closeFuture().sync();
         } finally {

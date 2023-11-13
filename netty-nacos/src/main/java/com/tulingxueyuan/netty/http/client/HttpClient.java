@@ -35,7 +35,6 @@ public class HttpClient {
                     ch.pipeline().addLast(new HttpClientInboundHandler());
                 }
             });
-
             // Start the client.
             ChannelFuture f = b.connect(host, port).sync();
             f.channel().closeFuture().sync();
