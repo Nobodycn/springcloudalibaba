@@ -10,6 +10,9 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 
+/**
+ * @author Administrator
+ */
 public class ClientInit extends ChannelInitializer<SocketChannel> {
 
     @Override
