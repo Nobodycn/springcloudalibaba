@@ -17,3 +17,14 @@
 /netty-nacos/target/classes/com/tulingxueyuan/netty/outread/ServerOutReadHandler.class
 /netty-adv/target/
 /netty-nacos/target/classes/com/tulingxueyuan/netty/embedded/AbsIntegerEncoder.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/autossl/AutoSSLHttpServer.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/autossl/AutoSSLServerHandlerInit.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/BusiHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/client/HttpClient$1.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/client/HttpClient.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/client/HttpClientInboundHandler.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/HttpServer.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/RespConstant.class
+/netty-nacos/target/classes/com/tulingxueyuan/netty/http/server/ServerHandlerInit.class
+/product-nacos/target/classes/com/tulingxueyuan/product/service/MyUserDetailService.class
+/product-nacos/target/classes/com/tulingxueyuan/product/config/WebSecurityConfig.class
